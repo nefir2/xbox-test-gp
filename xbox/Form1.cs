@@ -129,6 +129,11 @@ namespace xbox
 			else PLUGINText(Color.Maroon, "ваш гп был удалён, плачьте.");
 			if (Gamepad.Gamepads.Count == 0) GPNum.Enabled = false;
 		}
+
+		private void GPNum_ValueChanged(object sender, EventArgs e)
+		{
+			gp = Gamepad.Gamepads[(int)GPNum.Value];
+		}
 	}
 }
 

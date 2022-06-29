@@ -52,6 +52,7 @@
 			this.GPCount = new System.Windows.Forms.Label();
 			this.GPNum = new System.Windows.Forms.NumericUpDown();
 			this.timer = new System.Windows.Forms.Timer(this.components);
+			this.label12 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.GPNum)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -101,9 +102,9 @@
 			this.LT.ForeColor = System.Drawing.SystemColors.ButtonFace;
 			this.LT.Location = new System.Drawing.Point(98, 82);
 			this.LT.Name = "LT";
-			this.LT.Size = new System.Drawing.Size(51, 13);
+			this.LT.Size = new System.Drawing.Size(13, 13);
 			this.LT.TabIndex = 4;
-			this.LT.Text = "LT TEXT";
+			this.LT.Text = "0";
 			// 
 			// RT
 			// 
@@ -111,9 +112,9 @@
 			this.RT.ForeColor = System.Drawing.SystemColors.ButtonFace;
 			this.RT.Location = new System.Drawing.Point(347, 82);
 			this.RT.Name = "RT";
-			this.RT.Size = new System.Drawing.Size(53, 13);
+			this.RT.Size = new System.Drawing.Size(13, 13);
 			this.RT.TabIndex = 5;
-			this.RT.Text = "RT TEXT";
+			this.RT.Text = "0";
 			// 
 			// RSV
 			// 
@@ -121,9 +122,9 @@
 			this.RSV.ForeColor = System.Drawing.SystemColors.ButtonFace;
 			this.RSV.Location = new System.Drawing.Point(347, 161);
 			this.RSV.Name = "RSV";
-			this.RSV.Size = new System.Drawing.Size(60, 13);
+			this.RSV.Size = new System.Drawing.Size(13, 13);
 			this.RSV.TabIndex = 6;
-			this.RSV.Text = "RSV TEXT";
+			this.RSV.Text = "0";
 			// 
 			// LSV
 			// 
@@ -131,9 +132,9 @@
 			this.LSV.ForeColor = System.Drawing.SystemColors.ButtonFace;
 			this.LSV.Location = new System.Drawing.Point(99, 161);
 			this.LSV.Name = "LSV";
-			this.LSV.Size = new System.Drawing.Size(58, 13);
+			this.LSV.Size = new System.Drawing.Size(13, 13);
 			this.LSV.TabIndex = 7;
-			this.LSV.Text = "LSV TEXT";
+			this.LSV.Text = "0";
 			// 
 			// PLUGIN
 			// 
@@ -142,9 +143,9 @@
 			this.PLUGIN.ForeColor = System.Drawing.SystemColors.ButtonFace;
 			this.PLUGIN.Location = new System.Drawing.Point(12, 9);
 			this.PLUGIN.Name = "PLUGIN";
-			this.PLUGIN.Size = new System.Drawing.Size(122, 24);
+			this.PLUGIN.Size = new System.Drawing.Size(364, 24);
 			this.PLUGIN.TabIndex = 8;
-			this.PLUGIN.Text = "PLUGGED IN";
+			this.PLUGIN.Text = "программа не видит подключённых гп.";
 			// 
 			// label5
 			// 
@@ -162,9 +163,9 @@
 			this.BUTTON.ForeColor = System.Drawing.SystemColors.ButtonFace;
 			this.BUTTON.Location = new System.Drawing.Point(137, 257);
 			this.BUTTON.Name = "BUTTON";
-			this.BUTTON.Size = new System.Drawing.Size(83, 13);
+			this.BUTTON.Size = new System.Drawing.Size(33, 13);
 			this.BUTTON.TabIndex = 10;
-			this.BUTTON.Text = "BUTTON TEXT";
+			this.BUTTON.Text = "None";
 			// 
 			// LSH
 			// 
@@ -172,9 +173,9 @@
 			this.LSH.ForeColor = System.Drawing.SystemColors.ButtonFace;
 			this.LSH.Location = new System.Drawing.Point(98, 174);
 			this.LSH.Name = "LSH";
-			this.LSH.Size = new System.Drawing.Size(59, 13);
+			this.LSH.Size = new System.Drawing.Size(13, 13);
 			this.LSH.TabIndex = 11;
-			this.LSH.Text = "LSH TEXT";
+			this.LSH.Text = "0";
 			// 
 			// RSH
 			// 
@@ -182,9 +183,9 @@
 			this.RSH.ForeColor = System.Drawing.SystemColors.ButtonFace;
 			this.RSH.Location = new System.Drawing.Point(347, 174);
 			this.RSH.Name = "RSH";
-			this.RSH.Size = new System.Drawing.Size(61, 13);
+			this.RSH.Size = new System.Drawing.Size(13, 13);
 			this.RSH.TabIndex = 12;
-			this.RSH.Text = "RSH TEXT";
+			this.RSH.Text = "0";
 			// 
 			// label6
 			// 
@@ -267,9 +268,9 @@
 			this.GPCount.ForeColor = System.Drawing.Color.White;
 			this.GPCount.Location = new System.Drawing.Point(179, 343);
 			this.GPCount.Name = "GPCount";
-			this.GPCount.Size = new System.Drawing.Size(63, 13);
+			this.GPCount.Size = new System.Drawing.Size(13, 13);
 			this.GPCount.TabIndex = 20;
-			this.GPCount.Text = "GP COUNT";
+			this.GPCount.Text = "0";
 			// 
 			// GPNum
 			// 
@@ -292,6 +293,7 @@
             0,
             0,
             0});
+			this.GPNum.ValueChanged += new System.EventHandler(this.GPNum_ValueChanged);
 			// 
 			// timer
 			// 
@@ -299,12 +301,23 @@
 			this.timer.Interval = 1;
 			this.timer.Tick += new System.EventHandler(this.Timer_Tick);
 			// 
+			// label12
+			// 
+			this.label12.AutoSize = true;
+			this.label12.ForeColor = System.Drawing.SystemColors.ButtonFace;
+			this.label12.Location = new System.Drawing.Point(472, 338);
+			this.label12.Name = "label12";
+			this.label12.Size = new System.Drawing.Size(105, 13);
+			this.label12.TabIndex = 22;
+			this.label12.Text = "выберите геймпад:";
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Black;
 			this.ClientSize = new System.Drawing.Size(640, 365);
+			this.Controls.Add(this.label12);
 			this.Controls.Add(this.GPNum);
 			this.Controls.Add(this.GPCount);
 			this.Controls.Add(this.label11);
@@ -327,8 +340,12 @@
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
 			this.MaximizeBox = false;
 			this.Name = "Form1";
+			this.ShowIcon = false;
+			this.ShowInTaskbar = false;
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "тест гп";
 			((System.ComponentModel.ISupportInitialize)(this.GPNum)).EndInit();
 			this.ResumeLayout(false);
@@ -361,6 +378,7 @@
 		private System.Windows.Forms.Label GPCount;
 		private System.Windows.Forms.NumericUpDown GPNum;
 		private System.Windows.Forms.Timer timer;
+		private System.Windows.Forms.Label label12;
 	}
 }
 
