@@ -23,8 +23,8 @@ namespace xbox
 		public Form1()
 		{
 			InitializeComponent();
-			Gamepad.GamepadAdded += Gamepad_GamepadAdded;
-			Gamepad.GamepadRemoved += Gamepad_GamepadRemoved;
+			//Gamepad.GamepadAdded += Gamepad_GamepadAdded;
+			//Gamepad.GamepadRemoved += Gamepad_GamepadRemoved;
 			timer = new Timer();
 			timer.Tick += Timer_Tick;
 			timer.Interval = 1;
@@ -49,22 +49,26 @@ namespace xbox
 				if (Reading.LeftTrigger != 0)
 				{
 					await Log($"уровень нажатия на левый тригер: {Reading.LeftTrigger}");
+					LT.Text = $"{Reading.LeftTrigger}";
 					gpvb.LeftMotor = Reading.LeftTrigger;
 					gp.Vibration = gpvb;
 				}
 				else
 				{
+					RT.Text = "0";
 					gpvb.LeftMotor = 0;
 					gp.Vibration = gpvb;
 				}
 				if (Reading.RightTrigger != 0)
 				{
 					await Log($"уровень нажатия на правый тригер: {Reading.RightTrigger}");
+					RT.Text = $"{Reading.RightTrigger}";
 					gpvb.RightMotor = Reading.RightTrigger;
 					gp.Vibration = gpvb;
 				}
 				else
 				{
+					RT.Text = "0";
 					gpvb.RightMotor = 0;
 					gp.Vibration = gpvb;
 				}
@@ -86,11 +90,13 @@ namespace xbox
 		private async void Gamepad_GamepadAdded(object sender, Gamepad e)
 		{
 			await Log("ваш гп был подключён, радуйтесь.");
+			PLUGIN.Text = "ваш гп был подключён, радуйтесь.";
 			//throw new NotImplementedException();
 		}
 		private async void Gamepad_GamepadRemoved(object sender, Gamepad e)
 		{
 			await Log("ваш гп был удалён, плачьте.");
+			PLUGIN.Text = "ваш гп был удалён, плачьте.";
 			//throw new NotImplementedException();
 		}
 	}
