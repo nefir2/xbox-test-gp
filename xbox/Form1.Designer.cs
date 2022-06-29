@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
@@ -50,6 +51,7 @@
 			this.label11 = new System.Windows.Forms.Label();
 			this.GPCount = new System.Windows.Forms.Label();
 			this.GPNum = new System.Windows.Forms.NumericUpDown();
+			this.timer = new System.Windows.Forms.Timer(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.GPNum)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -291,6 +293,12 @@
             0,
             0});
 			// 
+			// timer
+			// 
+			this.timer.Enabled = true;
+			this.timer.Interval = 1;
+			this.timer.Tick += new System.EventHandler(this.Timer_Tick);
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -352,6 +360,7 @@
 		private System.Windows.Forms.Label label11;
 		private System.Windows.Forms.Label GPCount;
 		private System.Windows.Forms.NumericUpDown GPNum;
+		private System.Windows.Forms.Timer timer;
 	}
 }
 

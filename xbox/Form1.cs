@@ -20,10 +20,6 @@ namespace xbox
 		/// </summary>
 		private Gamepad gp;
 		/// <summary>
-		/// таймер для проверки изменений с гп.
-		/// </summary>
-		private readonly Timer timer;
-		/// <summary>
 		/// конструктор формы.
 		/// </summary>
 		public Form1()
@@ -31,23 +27,6 @@ namespace xbox
 			InitializeComponent();
 			Gamepad.GamepadAdded += Gamepad_GamepadAdded;
 			Gamepad.GamepadRemoved += Gamepad_GamepadRemoved;
-			timer = new Timer();
-			timer.Tick += Timer_Tick;
-			timer.Interval = 1;
-			timer.Start();
-		}
-		/// <summary>
-		/// вывод отладочного сообщения.
-		/// </summary>
-		/// <remarks>
-		/// пишет дату перед указанным сообщением.
-		/// </remarks>
-		/// <param name="mess">сообщение для вывода.</param>
-		/// <returns>ожидание асинхронного выполнения.</returns>
-		private async Task Log(string mess)
-		{
-			Task task = Task.Run(() => { Debug.WriteLine(DateTime.Now.ToString() + ": " + mess); });
-			await task;
 		}
 		/// <summary>
 		/// вывод сообщения в лейбл <see cref="PLUGIN"/>.
@@ -152,3 +131,17 @@ namespace xbox
 		}
 	}
 }
+
+/// <summary>
+/// вывод отладочного сообщения.
+/// </summary>
+/// <remarks>
+/// пишет дату перед указанным сообщением.
+/// </remarks>
+/// <param name="mess">сообщение для вывода.</param>
+/// <returns>ожидание асинхронного выполнения.</returns>
+//private async Task Log(string mess)
+//{
+//	Task task = Task.Run(() => { Debug.WriteLine(DateTime.Now.ToString() + ": " + mess); });
+//	await task;
+//}
