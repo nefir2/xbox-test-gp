@@ -344,7 +344,6 @@
 			this.MaximizeBox = false;
 			this.Name = "Form1";
 			this.ShowIcon = false;
-			this.ShowInTaskbar = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "тест гп";
 			((System.ComponentModel.ISupportInitialize)(this.GPNum)).EndInit();
