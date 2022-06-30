@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
+//using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+//using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using Windows.Gaming.Input;
@@ -136,12 +132,6 @@ namespace xbox
 			if (Gamepad.Gamepads.Count == 0) GPNum.Enabled = false;
 		}
 		/// <summary>
-		/// изменение рабочего гп в программе.
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void GPNum_ValueChanged(object sender, EventArgs e) => gp = Gamepad.Gamepads[Convert.ToInt32(GPNum.Value)];
-		/// <summary>
 		/// появляется лейбл с информацией при наведении на чекбокс.
 		/// </summary>
 		/// <param name="sender"></param>
@@ -153,6 +143,12 @@ namespace xbox
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
 		private void motorsCheck_MouseLeave(object sender, EventArgs e) => infoLabel.Visible = false;
+		/// <summary>
+		/// изменение рабочего гп в программе.
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void GPNum_ValueChanged(object sender, EventArgs e) => gp = Gamepad.Gamepads[Convert.ToInt32(GPNum.Value)];
 	}
 }
 
