@@ -46,7 +46,7 @@
 			this.label7 = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
 			this.label9 = new System.Windows.Forms.Label();
-			this.label10 = new System.Windows.Forms.Label();
+			this.infoLabel = new System.Windows.Forms.Label();
 			this.motorsCheck = new System.Windows.Forms.CheckBox();
 			this.label11 = new System.Windows.Forms.Label();
 			this.GPCount = new System.Windows.Forms.Label();
@@ -227,17 +227,18 @@
 			this.label9.TabIndex = 15;
 			this.label9.Text = "Y";
 			// 
-			// label10
+			// infoLabel
 			// 
-			this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.label10.ForeColor = System.Drawing.Color.Yellow;
-			this.label10.Location = new System.Drawing.Point(418, 9);
-			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(210, 63);
-			this.label10.TabIndex = 17;
-			this.label10.Text = "*при нажатии на определённый тригер, будет крутится соответствующий мотор с той с" +
+			this.infoLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.infoLabel.ForeColor = System.Drawing.Color.Yellow;
+			this.infoLabel.Location = new System.Drawing.Point(418, 9);
+			this.infoLabel.Name = "infoLabel";
+			this.infoLabel.Size = new System.Drawing.Size(210, 63);
+			this.infoLabel.TabIndex = 17;
+			this.infoLabel.Text = "*при нажатии на определённый тригер, будет крутится соответствующий мотор с той с" +
     "илой, с которой нажимается тригер.";
-			this.label10.Click += new System.EventHandler(this.HideLabel);
+			this.infoLabel.Visible = false;
+			this.infoLabel.Click += new System.EventHandler(this.HideLabel);
 			// 
 			// motorsCheck
 			// 
@@ -251,6 +252,8 @@
 			this.motorsCheck.TabIndex = 18;
 			this.motorsCheck.Text = "моторы по нажатию триггеров";
 			this.motorsCheck.UseVisualStyleBackColor = true;
+			this.motorsCheck.MouseLeave += new System.EventHandler(this.motorsCheck_MouseLeave);
+			this.motorsCheck.MouseHover += new System.EventHandler(this.motorsCheck_MouseHover);
 			// 
 			// label11
 			// 
@@ -322,7 +325,7 @@
 			this.Controls.Add(this.GPCount);
 			this.Controls.Add(this.label11);
 			this.Controls.Add(this.motorsCheck);
-			this.Controls.Add(this.label10);
+			this.Controls.Add(this.infoLabel);
 			this.Controls.Add(this.label8);
 			this.Controls.Add(this.label9);
 			this.Controls.Add(this.label7);
@@ -371,7 +374,7 @@
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.Label label9;
-		private System.Windows.Forms.Label label10;
+		private System.Windows.Forms.Label infoLabel;
 		private System.Windows.Forms.CheckBox motorsCheck;
 		private System.Windows.Forms.Label label11;
 		private System.Windows.Forms.Label GPCount;

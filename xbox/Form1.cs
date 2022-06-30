@@ -72,8 +72,11 @@ namespace xbox
 				{
 					//await Log($"уровень нажатия на левый тригер: {Reading.LeftTrigger}");
 					LT.Text = $"{Reading.LeftTrigger}";
-					if (motorsCheck.Checked) gpvb.LeftMotor = Reading.LeftTrigger;
-					gp.Vibration = gpvb;
+					if (motorsCheck.Checked)
+					{
+						gpvb.LeftMotor = Reading.LeftTrigger;
+						gp.Vibration = gpvb;
+					}
 				}
 				else
 				{
@@ -85,8 +88,11 @@ namespace xbox
 				{
 					//await Log($"уровень нажатия на правый тригер: {Reading.RightTrigger}");
 					RT.Text = $"{Reading.RightTrigger}";
-					if (motorsCheck.Checked) gpvb.RightMotor = Reading.RightTrigger;
-					gp.Vibration = gpvb;
+					if (motorsCheck.Checked)
+					{
+						gpvb.RightMotor = Reading.RightTrigger;
+						gp.Vibration = gpvb;
+					}
 				}
 				else
 				{
@@ -129,11 +135,24 @@ namespace xbox
 			else PLUGINText(Color.Maroon, "ваш гп был удалён, плачьте.");
 			if (Gamepad.Gamepads.Count == 0) GPNum.Enabled = false;
 		}
-
-		private void GPNum_ValueChanged(object sender, EventArgs e)
-		{
-			gp = Gamepad.Gamepads[(int)GPNum.Value];
-		}
+		/// <summary>
+		/// изменение рабочего гп в программе.
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void GPNum_ValueChanged(object sender, EventArgs e) => gp = Gamepad.Gamepads[Convert.ToInt32(GPNum.Value)];
+		/// <summary>
+		/// появляется лейбл с информацией при наведении на чекбокс.
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void motorsCheck_MouseHover(object sender, EventArgs e) => infoLabel.Visible = true;
+		/// <summary>
+		/// исчезает лейбл с информацией при выходе мыши из области чекбокса.
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void motorsCheck_MouseLeave(object sender, EventArgs e) => infoLabel.Visible = false;
 	}
 }
 
